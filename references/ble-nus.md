@@ -1,15 +1,15 @@
 # BLE Nordic UART Service
 
-Use this reference for generic BLE NUS advertising, service registration, RX/TX, and JSON command flows on VOBOT D1 MicroPython apps.
+Use this reference for generic BLE NUS advertising, service registration, RX/TX, and JSON command flows on mini dock MicroPython apps.
 
-This reference merges the prior BLE baseline but removes app-specific assumptions. It is not tied to any one companion app.
+This reference merges the prior local/project BLE baseline but removes app-specific assumptions. It is not an official vendor guarantee and is not tied to any one companion app.
 
 ## Generic Identity
 
 Make identity configurable:
 
 ```python
-BLE_NAME = "VOBOT-D1"
+BLE_NAME = "mini dock"
 APP_PROTOCOL = "json-nus"
 ```
 
@@ -22,7 +22,7 @@ Standard Nordic UART Service UUIDs:
 
 ## Stable Implementation Rules
 
-- Use raw `bluetooth.BLE()` for the verified RX baseline.
+- Use raw `bluetooth.BLE()` for the local/project-verified RX baseline.
 - Use `_IRQ_GATTS_WRITE` plus `gatts_read(rx_handle)` for RX.
 - Use `gatts_notify(conn_handle, tx_handle, data)` for TX.
 - Register the NUS GATT service only once per VM lifecycle.
@@ -110,4 +110,3 @@ Do not claim support for these without separate tests:
 - retransmission protocol
 - measured throughput tuning
 - multi-central behavior
-

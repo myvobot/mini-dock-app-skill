@@ -1,6 +1,6 @@
 # App Structure And Deployment
 
-Use this reference for VOBOT D1 / Vobot Mini Dock app layout, lifecycle, upload, restart, and resource-path decisions.
+Use this reference for mini dock app layout, lifecycle, upload, restart, and resource-path decisions.
 
 Sources:
 - Official getting started: https://dock.myvobot.com/developer/getting_started/
@@ -15,8 +15,8 @@ Minimum structure:
 
 ```text
 your_app/
-├── __init__.py
-└── resources/
+|-- __init__.py
+`-- resources/
 ```
 
 Publishing-oriented apps may also include `manifest.yml`, `app/`, and `settings/`, but a minimal local app can be just `__init__.py` plus optional resources.
@@ -78,4 +78,3 @@ Avoid:
 - Asset paths use `A:apps/{NAME}/resources/...`.
 - Thonny log is checked for device-side stack traces.
 - Large apps respect small device storage limits.
-

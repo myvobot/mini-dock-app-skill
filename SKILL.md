@@ -1,24 +1,37 @@
 ---
-name: dock-mini-app-skill
-description: Use this skill when building, modifying, reviewing, or debugging generic VOBOT D1 / Vobot Mini Dock MicroPython apps, LVGL user interfaces, device input handling, resource paths, Thonny deployment, hardware peripheral use, GPIO/pin-safety decisions, or BLE Nordic UART Service workflows. This skill is device-focused and should not assume compatibility with any single companion app.
+name: mini-dock
+description: Use this skill when building, modifying, reviewing, or debugging generic mini dock MicroPython apps. Trigger for user phrases such as mini dock app, Thonny upload, LVGL screen, encoder button, resource path, app folder, device UI, hardware peripheral, GPIO pin, BLE UART, BLE NUS, or Bluetooth control. This skill is device-focused and should not assume compatibility with any single companion app.
 ---
 
-# Dock Mini App Skill
+# mini dock skill
 
 ## Purpose
 
-Build VOBOT D1 / Vobot Mini Dock apps that are portable across use cases. Prefer verified device and SDK behavior, keep app-specific protocols configurable, and call out anything that is inferred or unverified.
+Build mini dock apps that are portable across use cases. Prefer verified device and SDK behavior, keep app-specific protocols configurable, and call out anything that is inferred or unverified.
 
-## Default Workflow
+## Process Flow
 
-1. Identify the target: UI app, hardware/peripheral app, BLE app, diagnostic, or existing-app repair.
-2. Confirm only the missing critical inputs: app name, required hardware features, whether BLE/networking is needed, and whether assets are required.
-3. Generate a copyable app folder using `__init__.py` as the entrypoint.
-4. Use lifecycle hooks (`on_start`, `on_stop`, and optional foreground/background hooks) for setup, periodic work, and cleanup.
-5. Keep resource paths derived from `NAME`, never from the local folder name.
-6. Include concise deployment and debugging steps unless the user asks for code only.
+1. Classify the task: new app, app review, UI/input, peripheral/GPIO, BLE NUS, deployment, or diagnostic.
+2. Load only the needed reference file:
+   - `references/app-structure-and-deployment.md` for app layout, lifecycle, upload, restart, and paths.
+   - `references/ui-and-input.md` for LVGL screens, fonts, buttons, encoder flow, and layout.
+   - `references/hardware-and-peripherals.md` for SDK peripherals, GPIO, physical pins, and safety checks.
+   - `references/ble-nus.md` for BLE advertising, GATT, RX/TX, and JSON protocol.
+3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, or target behavior.
+4. Generate or edit a copyable app folder using `__init__.py` as the entrypoint.
+5. Apply the app rules below, especially `NAME`-derived resource paths.
+6. Validate against the success checks and call out unverified hardware assumptions.
+7. Return the result in this order: directory tree, files or patch summary, upload/restart notes, debugging checks.
 
 ## App Rules
+
+Recommended app directory:
+
+```text
+your_app/
+|-- __init__.py
+`-- resources/
+```
 
 - Entry file: `__init__.py`.
 - Required app property: `NAME = "App Name"`.
@@ -26,7 +39,7 @@ Build VOBOT D1 / Vobot Mini Dock apps that are portable across use cases. Prefer
 - Put bundled files under `resources/`.
 - Build resource paths as `f"A:apps/{NAME}/resources/..."`.
 - Keep installed app size in mind; the official architecture reference notes small app storage limits.
-- Do not generate `main.py` as the D1 app entrypoint.
+- Do not generate `main.py` as the mini dock app entrypoint.
 - Do not delete the device `/apps` directory when uninstalling; delete only the target app folder.
 
 ## UI And Input
@@ -41,13 +54,13 @@ Read `references/ui-and-input.md` when building layouts, fonts, button/encoder f
 
 Prefer the official `peripherals` SDK modules for built-in hardware: screen brightness/resolution, buzzer, LED clock, and ambient light. Acquire and release controllable peripherals when the SDK requires it.
 
-For raw GPIO or physical pin work, do not invent a VOBOT D1 pinout. Treat physical pin mappings as hardware-revision-specific unless the user provides a schematic, board photo, or tested REPL output. Generate a diagnostic script when needed.
+For raw GPIO or physical pin work, do not invent a mini dock pinout. Treat physical pin mappings as hardware-revision-specific unless the user provides a schematic, board photo, or tested REPL output. Generate a diagnostic script when needed.
 
 Read `references/hardware-and-peripherals.md` before using built-in peripherals, raw GPIO, physical connectors, or pin definitions.
 
 ## BLE NUS
 
-BLE support is generic Nordic UART Service guidance for VOBOT D1 MicroPython apps. Do not bake in a companion app name, product identity, or approval protocol unless the user requests it.
+BLE support is generic Nordic UART Service guidance for mini dock MicroPython apps. Do not bake in a companion app name, product identity, or approval protocol unless the user requests it.
 
 Default BLE principles:
 - Use configurable device name and protocol fields.
@@ -71,10 +84,13 @@ Read `references/app-structure-and-deployment.md` for the full deployment checkl
 
 ## Errors To Avoid
 
-- Tying generic BLE output to a specific app such as "Claude D1 Buddy" unless requested.
+- Tying generic BLE output to a specific companion app unless requested.
 - Treating observed numeric key codes as the public API when LVGL symbolic constants are available.
 - Re-registering BLE GATT services repeatedly during app re-entry.
 - Calling `ble.active(False)` in normal app stop without considering re-entry behavior.
 - Using desktop paths or temporary folder names for assets.
-- Guessing physical GPIO mappings from unrelated D1 Mini / ESP8266 boards.
+- Guessing physical GPIO mappings from unrelated development boards.
 
+## Test Prompts
+
+Use `tests/prompts.md` when evaluating whether this skill still behaves correctly after edits.

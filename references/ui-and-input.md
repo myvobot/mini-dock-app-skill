@@ -25,7 +25,7 @@ def get_resolution():
         return (320, 240)
 ```
 
-Use 320x240 as the fallback. Do not use 240x135 as the default for new D1 code.
+Use 320x240 as the fallback. Do not use 240x135 as the default for new mini dock code.
 
 ## LVGL Baseline
 

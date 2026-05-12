@@ -1,10 +1,10 @@
-# Dock Mini App Skill Introduction
+# mini dock skill introduction
 
-This document is the skill-specific introduction that can be linked from a VOBOT D1 manual, internal guide, or project README.
+This document is the skill-specific introduction that can be linked from a mini dock manual, internal guide, or project README.
 
 ## What The Skill Does
 
-`dock-mini-app-skill` helps an AI coding agent generate, modify, and review VOBOT D1 / Vobot Mini Dock apps without binding the output to a single companion app.
+`mini-dock` helps an AI coding agent generate, modify, and review mini dock apps without binding the output to a single companion app.
 
 It focuses on:
 - app folder and entrypoint conventions
@@ -20,24 +20,24 @@ It focuses on:
 Use the skill when asking for:
 
 ```text
-Use $dock-mini-app-skill to make a VOBOT D1 app that displays a QR code.
+Use $mini-dock to make a mini dock app that displays a QR code.
 ```
 
 ```text
-Use $dock-mini-app-skill to create a generic BLE NUS status monitor.
+Use $mini-dock to create a generic BLE NUS status monitor.
 ```
 
 ```text
-Use $dock-mini-app-skill to check whether my app resources will work after upload.
+Use $mini-dock to check whether my app resources will work after upload.
 ```
 
 ```text
-Use $dock-mini-app-skill to add button/encoder navigation to this LVGL screen.
+Use $mini-dock to add button/encoder navigation to this LVGL screen.
 ```
 
 ## What It Does Not Replace
 
-The skill does not replace the VOBOT D1 manual. For device setup, SDK API details, and official constraints, use the official references:
+The skill does not replace the mini dock manual. For device setup, SDK API details, and official constraints, use the official references:
 
 - Developer getting started: https://dock.myvobot.com/developer/getting_started/
 - Resource path configuration: https://dock.myvobot.com/developer/getting_started/#important-resource-file-path-configuration
@@ -52,8 +52,8 @@ The skill generates or checks apps in this basic shape:
 
 ```text
 my-app/
-├── __init__.py
-└── resources/
+|-- __init__.py
+`-- resources/
 ```
 
 The entrypoint is `__init__.py`, and asset paths should be derived from `NAME`:
@@ -80,4 +80,3 @@ Keep generated apps portable and explicit:
 - keep BLE identity and JSON protocol fields configurable
 - do not invent physical pin mappings without hardware-specific evidence
 - call out unverified assumptions clearly
-

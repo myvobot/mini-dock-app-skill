@@ -1,4 +1,4 @@
 interface:
-  display_name: "Dock Mini App Skill"
-  short_description: "Build generic VOBOT D1 apps and BLE workflows"
-  default_prompt: "Use $dock-mini-app-skill to build a generic VOBOT D1 app with correct UI, hardware, BLE, and deployment guidance."
+  display_name: "mini dock skill"
+  short_description: "Build generic mini dock apps and BLE workflows"
+  default_prompt: "Use $mini-dock to build a generic mini dock app with correct UI, hardware, BLE, and deployment guidance."
