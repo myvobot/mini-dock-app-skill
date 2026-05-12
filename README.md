@@ -1,6 +1,6 @@
 # mini dock skill
 
-A generic Codex/Claude-style skill for building and reviewing **mini dock** MicroPython apps.
+A generic AI coding skill for building and reviewing **mini dock** MicroPython apps.
 
 This repository contains the skill instructions. Device setup, SDK behavior, Thonny usage, app lifecycle, and resource-path rules belong to the official VOBOT documentation and are linked below instead of being duplicated here.
 
@@ -41,22 +41,8 @@ mini_dock/
 
 ## Install
 
-For Codex:
-
 ```bash
-ln -s "/path/to/mini_dock" "$HOME/.codex/skills/mini-dock"
-```
-
-For Claude Code:
-
-```bash
-ln -s "/path/to/mini_dock" "$HOME/.claude/skills/mini-dock"
-```
-
-PowerShell example:
-
-```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\skills\mini-dock" -Target "C:\path\to\mini_dock"
+npx skills add https://github.com/myvobot/mini_dock --skill mini-dock
 ```
 
 Restart or reload the app after installing.
