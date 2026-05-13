@@ -23,7 +23,9 @@ mini_dock/
 |-- references/
 |   |-- app-structure-and-deployment.md
 |   |-- ble-nus.md
+|   |-- emulator.md
 |   |-- hardware-and-peripherals.md
+|   |-- publishing.md
 |   |-- system-services.md
 |   |-- ui-and-input.md
 |   `-- web-settings.md
@@ -37,8 +39,12 @@ mini_dock/
 - Important resource path configuration: https://dock.myvobot.com/developer/getting_started/#important-resource-file-path-configuration
 - Thonny download: https://thonny.org/
 - Application architecture: https://dock.myvobot.com/developer/guides/application-architecture/
+- Application design: https://dock.myvobot.com/developer/guides/app-design/
 - Button events: https://dock.myvobot.com/developer/guides/button-event/
 - Interface guide: https://dock.myvobot.com/developer/guides/app-interface-guide/
+- Application settings: https://dock.myvobot.com/developer/guides/app-settings/
+- Publishing guide: https://dock.myvobot.com/developer/guides/publishing-guide/
+- MiniDock emulator: https://dock.myvobot.com/developer/mini_dock_emulator/
 - Peripherals reference: https://dock.myvobot.com/developer/reference/peripherals/
 - Application manager: https://dock.myvobot.com/developer/reference/manager/
 - Device: https://dock.myvobot.com/developer/reference/system/

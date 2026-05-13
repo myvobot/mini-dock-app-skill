@@ -4,10 +4,13 @@ Use this reference when an app needs a web configuration page generated from `ge
 
 Source:
 - App Settings on Web Page: https://dock.myvobot.com/developer/reference/web-page/
+- Application Settings guide: https://dock.myvobot.com/developer/guides/app-settings/
 
 ## When To Use
 
 Use web settings when users should configure app parameters from a browser instead of only through the mini dock screen and buttons.
+
+The official Application Settings guide says configuration mode calls `get_settings_json()` in each app, generates HTML controls from the returned data, saves changed values on the device, and lets the app read them with `app_mgr.config()`.
 
 Implement a top-level `get_settings_json()` in `__init__.py`. It should return a JSON-like dict with:
 - `title`: page title
@@ -196,4 +199,3 @@ Dynamic configuration group for repeated sub-configurations:
 - Component `name` should be stable because saved config uses it as a key.
 - Keep captions short and user-facing.
 - Put detailed help in `tip` or `hint` rather than the caption.
-

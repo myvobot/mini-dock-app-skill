@@ -11,7 +11,7 @@ Build mini dock apps that are portable across use cases. Prefer verified device 
 
 ## Process Flow
 
-1. Classify the task: new app, app review, UI/input, system services, web settings, peripheral/GPIO, BLE NUS, deployment, or diagnostic.
+1. Classify the task: new app, app review, UI/input, system services, web settings, peripheral/GPIO, BLE NUS, deployment, emulator debugging, publishing, or diagnostic.
 2. Load only the needed reference file:
    - `references/app-structure-and-deployment.md` for app layout, lifecycle, upload, restart, and paths.
    - `references/ui-and-input.md` for LVGL screens, fonts, buttons, encoder flow, and layout.
@@ -19,6 +19,8 @@ Build mini dock apps that are portable across use cases. Prefer verified device 
    - `references/web-settings.md` for `get_settings_json()` and web configuration forms.
    - `references/hardware-and-peripherals.md` for SDK peripherals, GPIO, physical pins, and safety checks.
    - `references/ble-nus.md` for BLE advertising, GATT, RX/TX, and JSON protocol.
+   - `references/emulator.md` for Docker-based mini dock simulator setup and debugging.
+   - `references/publishing.md` for Gallery packaging, `manifest.yml`, `.vbt` generation, and upload review flow.
 3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, target behavior, or whether the app should support auto-switch carousel display.
 4. Generate or edit a copyable app folder using `__init__.py` as the entrypoint.
 5. Apply the app rules below, especially `NAME`-derived resource paths.
@@ -105,6 +107,10 @@ Default handoff order:
 5. Debugging: inspect Thonny logs and device-side errors.
 
 Read `references/app-structure-and-deployment.md` for the full deployment checklist, lifecycle details, and resource-path rules.
+
+Read `references/emulator.md` when the user wants to test locally in the mini dock simulator.
+
+Read `references/publishing.md` when the user wants to package or upload an app to the App Gallery.
 
 ## Errors To Avoid
 

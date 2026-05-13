@@ -15,11 +15,25 @@ Minimum structure:
 
 ```text
 your_app/
+|-- manifest.yml
 |-- __init__.py
 `-- resources/
 ```
 
-Publishing-oriented apps may also include `manifest.yml`, `app/`, and `settings/`, but a minimal local app can be just `__init__.py` plus optional resources.
+For local development, `manifest.yml` may be omitted. For packaging and publishing, include `manifest.yml`.
+
+Larger apps can use:
+
+```text
+your_app/
+|-- manifest.yml
+|-- __init__.py
+|-- app/
+|-- resources/
+`-- settings/
+```
+
+Use `app/` for application logic that talks to APIs or presentation layers such as LVGL. Use `settings/` for setting declarations when the app needs packaged settings resources.
 
 Minimum `__init__.py`:
 
@@ -41,6 +55,19 @@ Useful lifecycle hooks:
 - `on_running_foreground`: called while active; the official example describes roughly every 200 ms.
 - `on_running_background`: called less often while paused/stopped.
 - `on_boot`, `on_create`, `on_pause`, `on_resume`, `on_destroy`: use only when the app needs those phases.
+
+Lifecycle details:
+- `on_boot(apm)`: called after system boot; capture `app_mgr` and read system-level configuration when needed.
+- `on_create`: called after first launch or from shutdown.
+- `on_pause`: called when another foreground activity appears; pause app features.
+- `on_resume`: called after a foreground activity ends or right after started state; reactivate app features.
+- `on_running_foreground`: called about every 200 ms when active.
+- `on_running_background`: called about every 1 second while paused and about every 30 seconds while stopped.
+- `on_destroy`: called when the system destroys a stopped/paused app, such as under memory pressure.
+
+Size constraints from the official architecture guide:
+- Installed app maximum size is 200KB, including resources.
+- Total file system space occupied by all apps is limited to 900KB.
 
 ## Resource Paths
 

@@ -9,6 +9,8 @@ Sources:
 
 ## Screen
 
+The official interface guide states the system uses MicroPython and LVGL, with LVGL version 9.1 on the current mini dock.
+
 Known public device spec:
 - 2 inch IPS LCD.
 - 320x240 resolution.
@@ -59,6 +61,8 @@ Officially documented font names include:
 
 If unsure, inspect with `dir(lv)` on device.
 
+Font note from the official guide: one font file contains one font size. If the same text needs different sizes, use different font objects, such as `lv.font_ascii_14` and `lv.font_ascii_22`.
+
 ## Input API
 
 Use LVGL events and symbolic constants:
@@ -99,4 +103,3 @@ Use numeric codes only for diagnostics or compatibility shims. Prefer `lv.KEY.*`
 - Use circular scrolling for long text.
 - Avoid dense redraw in `on_running_foreground`; update only when state changes where possible.
 - Keep cleanup idempotent because apps may be entered and left repeatedly.
-

@@ -136,6 +136,43 @@ Expected:
 - makes file upload `file_path` start with `/`
 - reads saved values with `app_mgr.config()`
 
+## Publishing
+
+```text
+Use $mini-dock to prepare this app for App Gallery publishing with a manifest and packaging checklist.
+```
+
+Expected:
+- adds or checks `manifest.yml`
+- includes app metadata, system requirements, compatible device, and files include list
+- reminds that packaging generates a `.vbt`
+- notes upload/version info and review flow
+- checks 200KB installed app limit and 900KB total app storage limit
+
+## Emulator
+
+```text
+Use $mini-dock to explain how to run and debug this app in the mini dock emulator on macOS and WSL2.
+```
+
+Expected:
+- references Docker image `vobot/mini-dock-app-dev:latest`
+- mounts `./disk:/work/disk`
+- mentions app path under `disk/apps/...`
+- mentions `http://localhost` for web config
+- includes keyboard mapping for Enter, Escape, Left Arrow, and Right Arrow
+ 
+## Lifecycle Completeness
+
+```text
+Use $mini-dock to review whether this app uses lifecycle hooks correctly.
+```
+
+Expected:
+- requires `NAME`, `on_start`, and `on_stop`
+- explains optional `on_boot`, `on_create`, `on_pause`, `on_resume`, `on_running_foreground`, `on_running_background`, and `on_destroy`
+- checks cleanup in `on_stop` and `on_destroy`
+
 ## BLE NUS
 
 ```text

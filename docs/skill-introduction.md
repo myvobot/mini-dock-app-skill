@@ -14,6 +14,8 @@ It focuses on:
 - app manager, device info, settings, time, and network status
 - web settings forms with `get_settings_json()`
 - built-in SDK peripherals
+- local simulator debugging
+- packaging and App Gallery publishing
 - safe GPIO and pin-definition decisions
 - generic BLE Nordic UART Service (NUS) workflows
 - short Thonny deployment and debugging handoff
@@ -74,6 +76,8 @@ See the official resource path documentation for the device-level rule.
 - `references/app-structure-and-deployment.md`: app layout, lifecycle, upload handoff, path checks
 - `references/ui-and-input.md`: LVGL, fonts, screen, buttons, encoder input
 - `references/hardware-and-peripherals.md`: SDK peripherals and GPIO safety policy
+- `references/emulator.md`: Docker-based mini dock simulator setup and debugging
+- `references/publishing.md`: manifest, packaging, `.vbt`, and App Gallery upload flow
 - `references/system-services.md`: app manager, device, settings, clocktime, and network APIs
 - `references/web-settings.md`: web configuration forms and saved app settings
 - `references/ble-nus.md`: generic BLE NUS advertising, GATT, and JSON protocol patterns
