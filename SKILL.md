@@ -17,7 +17,7 @@ Build mini dock apps that are portable across use cases. Prefer verified device 
    - `references/ui-and-input.md` for LVGL screens, fonts, buttons, encoder flow, and layout.
    - `references/hardware-and-peripherals.md` for SDK peripherals, GPIO, physical pins, and safety checks.
    - `references/ble-nus.md` for BLE advertising, GATT, RX/TX, and JSON protocol.
-3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, or target behavior.
+3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, target behavior, or whether the app should support auto-switch carousel display.
 4. Generate or edit a copyable app folder using `__init__.py` as the entrypoint.
 5. Apply the app rules below, especially `NAME`-derived resource paths.
 6. Validate against the success checks and call out unverified hardware assumptions.
@@ -35,12 +35,26 @@ your_app/
 
 - Entry file: `__init__.py`.
 - Required app property: `NAME = "App Name"`.
+- Optional auto-switch carousel property: `CAN_BE_AUTO_SWITCHED = True` when the app should be eligible for automatic carousel switching.
 - Optional icon: `ICON = f"A:apps/{NAME}/resources/icon.png"` when an icon exists.
 - Put bundled files under `resources/`.
 - Build resource paths as `f"A:apps/{NAME}/resources/..."`.
 - Keep installed app size in mind; the official architecture reference notes small app storage limits.
 - Do not generate `main.py` as the mini dock app entrypoint.
 - Do not delete the device `/apps` directory when uninstalling; delete only the target app folder.
+
+## Auto-Switch Carousel
+
+When the user asks for carousel, auto-switch, rotating display, idle rotation, or an app that should appear in automatic switching, add this top-level property in `__init__.py` near `NAME`:
+
+```python
+NAME = "My App"
+CAN_BE_AUTO_SWITCHED = True
+```
+
+Use this only when the app is safe to enter automatically without user interaction. For setup screens, destructive controls, pairing flows, or apps that require foreground-only consent, leave it unset unless the user explicitly asks.
+
+Reference example: `myvobot/dock-mini-apps` Calendar View sets `CAN_BE_AUTO_SWITCHED = True` in `calendar_view/__init__.py`.
 
 ## UI And Input
 

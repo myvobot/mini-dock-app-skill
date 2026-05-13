@@ -9,6 +9,7 @@ This document is the skill-specific introduction that can be linked from a mini 
 It focuses on:
 - app folder and entrypoint conventions
 - `NAME` and resource-path correctness
+- optional auto-switch carousel support with `CAN_BE_AUTO_SWITCHED`
 - LVGL screen and input patterns
 - built-in SDK peripherals
 - safe GPIO and pin-definition decisions
@@ -60,6 +61,7 @@ The entrypoint is `__init__.py`, and asset paths should be derived from `NAME`:
 
 ```python
 NAME = "My App"
+CAN_BE_AUTO_SWITCHED = True
 ICON = f"A:apps/{NAME}/resources/icon.png"
 ```
 

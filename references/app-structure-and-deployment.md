@@ -25,6 +25,7 @@ Minimum `__init__.py`:
 
 ```python
 NAME = "Minimum App"
+CAN_BE_AUTO_SWITCHED = True
 ICON = ""
 
 async def on_start():
@@ -57,6 +58,23 @@ Avoid:
 - `resources/icon.png`
 - `/Users/.../icon.png`
 - `A:apps/local-temp-folder/resources/icon.png`
+
+## Auto-Switch Carousel Support
+
+`CAN_BE_AUTO_SWITCHED = True` is the top-level app property that marks an app as eligible for automatic carousel switching.
+
+Place it in `__init__.py` near `NAME`:
+
+```python
+NAME = "Clock Face"
+CAN_BE_AUTO_SWITCHED = True
+```
+
+Use it for passive display apps that can safely open during automatic switching, such as clocks, calendars, dashboards, status views, and ambient displays.
+
+Avoid enabling it by default for apps that need user setup, pairing, login, destructive controls, or foreground-only consent.
+
+Reference example: Calendar View in `myvobot/dock-mini-apps` sets this property in `calendar_view/__init__.py`.
 
 ## Upload
 

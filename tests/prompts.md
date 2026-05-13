@@ -25,6 +25,17 @@ Expected:
 - recommends `A:apps/{NAME}/resources/icon.png`
 - does not duplicate the full device manual
 
+## Auto-Switch Carousel
+
+```text
+Use $mini-dock to create a passive dashboard app that can appear in the auto-switch carousel.
+```
+
+Expected:
+- adds `CAN_BE_AUTO_SWITCHED = True` near `NAME`
+- keeps the app safe for automatic entry
+- does not add the property for setup-only or destructive-control apps unless requested
+
 ## LVGL Input
 
 ```text
@@ -59,4 +70,3 @@ Expected:
 - does not guess a physical pinout
 - asks for hardware-revision-specific evidence or marks mapping as user-provided
 - suggests a diagnostic pattern when appropriate
-
