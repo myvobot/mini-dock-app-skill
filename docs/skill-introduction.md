@@ -11,6 +11,8 @@ It focuses on:
 - `NAME` and resource-path correctness
 - optional auto-switch carousel support with `CAN_BE_AUTO_SWITCHED`
 - LVGL screen and input patterns
+- app manager, device info, settings, time, and network status
+- web settings forms with `get_settings_json()`
 - built-in SDK peripherals
 - safe GPIO and pin-definition decisions
 - generic BLE Nordic UART Service (NUS) workflows
@@ -72,6 +74,8 @@ See the official resource path documentation for the device-level rule.
 - `references/app-structure-and-deployment.md`: app layout, lifecycle, upload handoff, path checks
 - `references/ui-and-input.md`: LVGL, fonts, screen, buttons, encoder input
 - `references/hardware-and-peripherals.md`: SDK peripherals and GPIO safety policy
+- `references/system-services.md`: app manager, device, settings, clocktime, and network APIs
+- `references/web-settings.md`: web configuration forms and saved app settings
 - `references/ble-nus.md`: generic BLE NUS advertising, GATT, and JSON protocol patterns
 
 ## Design Principle

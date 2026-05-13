@@ -97,6 +97,45 @@ Expected:
 - uses `peripherals.screen.screen_resolution`
 - notes app-set screen brightness is temporary
 
+## App Manager Config
+
+```text
+Use $mini-dock to create an app that stores a username setting and shows a warning dialog when it is missing.
+```
+
+Expected:
+- captures `app_mgr` in `on_boot(apm)`
+- uses `app_mgr.config()` to read/save settings
+- uses `app_mgr.custom_dialog(...)` for the warning
+- uses root/subpage behavior when ESC handling matters
+
+## System Status
+
+```text
+Use $mini-dock to show device model, firmware version, time, timezone offset, and network status.
+```
+
+Expected:
+- uses `device.model` and `device.version.firmware`
+- uses `clocktime.now()`, `clocktime.datetime()`, or `clocktime.tzoffset()`
+- handles `clocktime.now() == -1`
+- uses `net.connected()` before reading or displaying network details
+- uses `settings.hour24()` when formatting time
+
+## Web Settings
+
+```text
+Use $mini-dock to add a web settings page with a username input, unit select, alert switch, and image upload.
+```
+
+Expected:
+- defines `get_settings_json()`
+- returns `title` and `form`
+- uses valid component types: `input`, `select`, `switch`, `file`
+- uses lowercase snake_case `name` values
+- makes file upload `file_path` start with `/`
+- reads saved values with `app_mgr.config()`
+
 ## BLE NUS
 
 ```text

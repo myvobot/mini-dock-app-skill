@@ -24,7 +24,9 @@ mini_dock/
 |   |-- app-structure-and-deployment.md
 |   |-- ble-nus.md
 |   |-- hardware-and-peripherals.md
-|   `-- ui-and-input.md
+|   |-- system-services.md
+|   |-- ui-and-input.md
+|   `-- web-settings.md
 `-- tests/
     `-- prompts.md
 ```
@@ -38,6 +40,12 @@ mini_dock/
 - Button events: https://dock.myvobot.com/developer/guides/button-event/
 - Interface guide: https://dock.myvobot.com/developer/guides/app-interface-guide/
 - Peripherals reference: https://dock.myvobot.com/developer/reference/peripherals/
+- Application manager: https://dock.myvobot.com/developer/reference/manager/
+- Device: https://dock.myvobot.com/developer/reference/system/
+- Settings: https://dock.myvobot.com/developer/reference/settings/
+- Clocktime: https://dock.myvobot.com/developer/reference/clocktime/
+- Network: https://dock.myvobot.com/developer/reference/network/
+- App settings on web page: https://dock.myvobot.com/developer/reference/web-page/
 
 ## Install
 

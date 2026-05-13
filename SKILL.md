@@ -1,6 +1,6 @@
 ---
 name: mini-dock
-description: Use this skill when building, modifying, reviewing, or debugging generic mini dock MicroPython apps. Trigger for user phrases such as mini dock app, Thonny upload, LVGL screen, encoder button, resource path, app folder, device UI, hardware peripheral, GPIO pin, BLE UART, BLE NUS, or Bluetooth control. This skill is device-focused and should not assume compatibility with any single companion app.
+description: Use this skill when building, modifying, reviewing, or debugging generic mini dock MicroPython apps. Trigger for user phrases such as mini dock app, Thonny upload, LVGL screen, encoder button, resource path, app folder, device UI, app manager, app settings, web settings, time, network status, hardware peripheral, GPIO pin, BLE UART, BLE NUS, or Bluetooth control. This skill is device-focused and should not assume compatibility with any single companion app.
 ---
 
 # mini dock skill
@@ -11,10 +11,12 @@ Build mini dock apps that are portable across use cases. Prefer verified device 
 
 ## Process Flow
 
-1. Classify the task: new app, app review, UI/input, peripheral/GPIO, BLE NUS, deployment, or diagnostic.
+1. Classify the task: new app, app review, UI/input, system services, web settings, peripheral/GPIO, BLE NUS, deployment, or diagnostic.
 2. Load only the needed reference file:
    - `references/app-structure-and-deployment.md` for app layout, lifecycle, upload, restart, and paths.
    - `references/ui-and-input.md` for LVGL screens, fonts, buttons, encoder flow, and layout.
+   - `references/system-services.md` for `app_mgr`, device identity/version, global settings, clocktime, network status, and app config.
+   - `references/web-settings.md` for `get_settings_json()` and web configuration forms.
    - `references/hardware-and-peripherals.md` for SDK peripherals, GPIO, physical pins, and safety checks.
    - `references/ble-nus.md` for BLE advertising, GATT, RX/TX, and JSON protocol.
 3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, target behavior, or whether the app should support auto-switch carousel display.
@@ -71,6 +73,14 @@ Prefer the official `peripherals` SDK modules for built-in hardware: screen brig
 For raw GPIO or physical pin work, do not invent a mini dock pinout. Treat physical pin mappings as hardware-revision-specific unless the user provides a schematic, board photo, or tested REPL output. Generate a diagnostic script when needed.
 
 Read `references/hardware-and-peripherals.md` before using built-in peripherals, raw GPIO, physical connectors, or pin definitions.
+
+## System Services And Web Settings
+
+Use `on_boot(apm)` to capture `app_mgr` when an app needs app state, persistent app config, root-page navigation, dialogs, or active exit.
+
+Read `references/system-services.md` before using `app_mgr`, `device`, `settings`, `clocktime`, or `net`.
+
+Read `references/web-settings.md` before generating `get_settings_json()` for web-based app configuration, file upload settings, or dynamic configuration groups.
 
 ## BLE NUS
 
