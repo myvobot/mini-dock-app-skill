@@ -47,6 +47,56 @@ Expected:
 - avoids numeric key codes except diagnostics
 - keeps cleanup idempotent
 
+## Buzzer
+
+```text
+Use $mini-dock to add a short confirmation beep to an app.
+```
+
+Expected:
+- uses `import peripherals`
+- checks or respects `peripherals.buzzer.enabled`
+- acquires and releases the buzzer
+- uses frequency in 100-8000 and volume in 0-100
+- stops buzzing with volume 0
+
+## LED Clock
+
+```text
+Use $mini-dock to display 1234 on the mini dock LED clock at 80 percent brightness.
+```
+
+Expected:
+- acquires and releases `peripherals.led_clock`
+- uses `set_display(ordinal, data)` with groups 1-4
+- uses documented digit segment values
+- calls `brightness(80)`
+- notes brightness/display control is temporary while app owns the peripheral
+
+## Ambient Light
+
+```text
+Use $mini-dock to make an ambient light RGB status pattern.
+```
+
+Expected:
+- acquires and releases `peripherals.ambient_light`
+- reads `ambient_light.count` when useful
+- uses RGB tuples in 0-255 range
+- chooses repeat behavior intentionally
+- sets brightness in 0-100
+
+## Screen Brightness
+
+```text
+Use $mini-dock to dim the screen to 50 percent and print the screen resolution.
+```
+
+Expected:
+- uses `peripherals.screen.brightness(50)`
+- uses `peripherals.screen.screen_resolution`
+- notes app-set screen brightness is temporary
+
 ## BLE NUS
 
 ```text
