@@ -1,6 +1,6 @@
 # BLE Nordic UART Service
 
-Use this reference for generic BLE NUS advertising, service registration, RX/TX, and JSON command flows on mini dock MicroPython apps.
+Use this reference for generic BLE NUS advertising, service registration, RX/TX, and JSON command flows on Mini Dock MicroPython apps.
 
 This reference merges the prior local/project BLE baseline but removes app-specific assumptions. It is not an official vendor guarantee and is not tied to any one companion app.
 
@@ -9,7 +9,7 @@ This reference merges the prior local/project BLE baseline but removes app-speci
 Make identity configurable:
 
 ```python
-BLE_NAME = "mini dock"
+BLE_NAME = "Mini Dock"
 APP_PROTOCOL = "json-nus"
 ```
 

@@ -11,7 +11,7 @@ Sources:
 ## Device Facts
 
 Publicly documented hardware facts:
-- device family: mini dock
+- device family: Mini Dock
 - screen: 2 inch, 320x240, 16M colors
 - ports include USB-C, USB 3.0, HDMI, and Ethernet
 - Python app development is supported through the Mini Dock SDK and MicroPython/LVGL
@@ -140,7 +140,7 @@ if peripherals.ambient_light.acquire():
 
 ## Physical Pins And Raw GPIO
 
-Do not assume mini dock has the same pin mapping as unrelated development boards.
+Do not assume Mini Dock has the same pin mapping as unrelated development boards.
 
 Skill policy:
 - If the user asks for "pin definitions", first distinguish built-in peripheral APIs, external connector pins, and raw MCU GPIO.
@@ -163,4 +163,4 @@ while True:
     time.sleep_ms(200)
 ```
 
-When producing code that uses raw GPIO, label the mapping as "user-provided" or "needs device verification" unless it comes from a trusted source for the exact mini dock hardware revision.
+When producing code that uses raw GPIO, label the mapping as "user-provided" or "needs device verification" unless it comes from a trusted source for the exact Mini Dock hardware revision.

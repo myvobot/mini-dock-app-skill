@@ -1,4 +1,4 @@
 interface:
-  display_name: "mini dock skill"
-  short_description: "Build generic mini dock apps and BLE workflows"
-  default_prompt: "Use $mini-dock to build a generic mini dock app with correct UI, hardware, BLE, and deployment guidance."
+  display_name: "Mini Dock Skill"
+  short_description: "Build generic Mini Dock apps and BLE workflows"
+  default_prompt: "Use $mini-dock to build a generic Mini Dock app with correct UI, hardware, BLE, and deployment guidance."

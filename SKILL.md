@@ -1,13 +1,13 @@
 ---
 name: mini-dock
-description: Use this skill when building, modifying, reviewing, or debugging generic mini dock MicroPython apps. Trigger for user phrases such as mini dock app, Thonny upload, LVGL screen, encoder button, resource path, app folder, device UI, app manager, app settings, web settings, time, network status, hardware peripheral, GPIO pin, BLE UART, BLE NUS, or Bluetooth control. This skill is device-focused and should not assume compatibility with any single companion app.
+description: Use this skill when building, modifying, reviewing, or debugging generic Mini Dock MicroPython apps. Trigger for user phrases such as Mini Dock app, Thonny upload, LVGL screen, encoder button, resource path, app folder, device UI, app manager, app settings, web settings, time, network status, hardware peripheral, GPIO pin, BLE UART, BLE NUS, or Bluetooth control. This skill is device-focused and should not assume compatibility with any single companion app.
 ---
 
-# mini dock skill
+# Mini Dock Skill
 
 ## Purpose
 
-Build mini dock apps that are portable across use cases. Prefer verified device and SDK behavior, keep app-specific protocols configurable, and call out anything that is inferred or unverified.
+Build Mini Dock apps that are portable across use cases. Prefer verified device and SDK behavior, keep app-specific protocols configurable, and call out anything that is inferred or unverified.
 
 ## Process Flow
 
@@ -19,7 +19,7 @@ Build mini dock apps that are portable across use cases. Prefer verified device 
    - `references/web-settings.md` for `get_settings_json()` and web configuration forms.
    - `references/hardware-and-peripherals.md` for SDK peripherals, GPIO, physical pins, and safety checks.
    - `references/ble-nus.md` for BLE advertising, GATT, RX/TX, and JSON protocol.
-   - `references/emulator.md` for Docker-based mini dock simulator setup and debugging.
+   - `references/emulator.md` for Docker-based Mini Dock simulator setup and debugging.
    - `references/publishing.md` for Gallery packaging, `manifest.yml`, `.vbt` generation, and upload review flow.
 3. Confirm missing critical inputs only when needed: app name, hardware feature, BLE role/protocol, assets, target behavior, or whether the app should support auto-switch carousel display.
 4. Generate or edit a copyable app folder using `__init__.py` as the entrypoint.
@@ -44,7 +44,7 @@ your_app/
 - Put bundled files under `resources/`.
 - Build resource paths as `f"A:apps/{NAME}/resources/..."`.
 - Keep installed app size in mind; the official architecture reference notes small app storage limits.
-- Do not generate `main.py` as the mini dock app entrypoint.
+- Do not generate `main.py` as the Mini Dock app entrypoint.
 - Do not delete the device `/apps` directory when uninstalling; delete only the target app folder.
 
 ## Auto-Switch Carousel
@@ -72,7 +72,7 @@ Read `references/ui-and-input.md` when building layouts, fonts, button/encoder f
 
 Prefer the official `peripherals` SDK modules for built-in hardware: screen brightness/resolution, buzzer, LED clock, and ambient light. Acquire and release controllable peripherals when the SDK requires it.
 
-For raw GPIO or physical pin work, do not invent a mini dock pinout. Treat physical pin mappings as hardware-revision-specific unless the user provides a schematic, board photo, or tested REPL output. Generate a diagnostic script when needed.
+For raw GPIO or physical pin work, do not invent a Mini Dock pinout. Treat physical pin mappings as hardware-revision-specific unless the user provides a schematic, board photo, or tested REPL output. Generate a diagnostic script when needed.
 
 Read `references/hardware-and-peripherals.md` before using built-in peripherals, raw GPIO, physical connectors, or pin definitions.
 
@@ -86,7 +86,7 @@ Read `references/web-settings.md` before generating `get_settings_json()` for we
 
 ## BLE NUS
 
-BLE support is generic Nordic UART Service guidance for mini dock MicroPython apps. Do not bake in a companion app name, product identity, or approval protocol unless the user requests it.
+BLE support is generic Nordic UART Service guidance for Mini Dock MicroPython apps. Do not bake in a companion app name, product identity, or approval protocol unless the user requests it.
 
 Default BLE principles:
 - Use configurable device name and protocol fields.
@@ -108,7 +108,7 @@ Default handoff order:
 
 Read `references/app-structure-and-deployment.md` for the full deployment checklist, lifecycle details, and resource-path rules.
 
-Read `references/emulator.md` when the user wants to test locally in the mini dock simulator.
+Read `references/emulator.md` when the user wants to test locally in the Mini Dock simulator.
 
 Read `references/publishing.md` when the user wants to package or upload an app to the App Gallery.
 

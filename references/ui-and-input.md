@@ -9,7 +9,7 @@ Sources:
 
 ## Screen
 
-The official interface guide states the system uses MicroPython and LVGL, with LVGL version 9.1 on the current mini dock.
+The official interface guide states the system uses MicroPython and LVGL, with LVGL version 9.1 on the current Mini Dock.
 
 Known public device spec:
 - 2 inch IPS LCD.
@@ -27,7 +27,7 @@ def get_resolution():
         return (320, 240)
 ```
 
-Use 320x240 as the fallback. Do not use 240x135 as the default for new mini dock code.
+Use 320x240 as the fallback. Do not use 240x135 as the default for new Mini Dock code.
 
 ## LVGL Baseline
 

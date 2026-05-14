@@ -1,6 +1,6 @@
 # Publishing
 
-Use this reference when packaging or uploading a mini dock app to the App Gallery.
+Use this reference when packaging or uploading a Mini Dock app to the App Gallery.
 
 Source:
 - Publishing guide: https://dock.myvobot.com/developer/guides/publishing-guide/
@@ -48,7 +48,7 @@ Example shape:
 application:
   name: MyApp
   version: 1.0.0
-  description: This is a sample application for mini dock.
+  description: This is a sample application for Mini Dock.
   author: John Doe
   author_email: developer@example.com
   bugs: https://github.com/example/myapp/issues

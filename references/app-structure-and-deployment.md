@@ -1,6 +1,6 @@
 # App Structure And Deployment
 
-Use this reference for mini dock app layout, lifecycle, upload, restart, and resource-path decisions.
+Use this reference for Mini Dock app layout, lifecycle, upload, restart, and resource-path decisions.
 
 Sources:
 - Official getting started: https://dock.myvobot.com/developer/getting_started/

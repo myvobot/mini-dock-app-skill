@@ -1,6 +1,6 @@
 # Emulator
 
-Use this reference when running or debugging apps in the mini dock simulator.
+Use this reference when running or debugging apps in the Mini Dock simulator.
 
 Source:
 - MiniDock Emulator: https://dock.myvobot.com/developer/mini_dock_emulator/

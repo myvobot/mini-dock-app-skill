@@ -5,7 +5,7 @@ Use these prompts to evaluate whether the skill still gives correct, device-neut
 ## Minimal App
 
 ```text
-Use $mini-dock to create a minimal hello world mini dock app.
+Use $mini-dock to create a minimal hello world Mini Dock app.
 ```
 
 Expected:
@@ -63,7 +63,7 @@ Expected:
 ## LED Clock
 
 ```text
-Use $mini-dock to display 1234 on the mini dock LED clock at 80 percent brightness.
+Use $mini-dock to display 1234 on the Mini Dock LED clock at 80 percent brightness.
 ```
 
 Expected:
@@ -152,7 +152,7 @@ Expected:
 ## Emulator
 
 ```text
-Use $mini-dock to explain how to run and debug this app in the mini dock emulator on macOS and WSL2.
+Use $mini-dock to explain how to run and debug this app in the Mini Dock emulator on macOS and WSL2.
 ```
 
 Expected:

@@ -8,7 +8,7 @@ Source:
 
 ## When To Use
 
-Use web settings when users should configure app parameters from a browser instead of only through the mini dock screen and buttons.
+Use web settings when users should configure app parameters from a browser instead of only through the Mini Dock screen and buttons.
 
 The official Application Settings guide says configuration mode calls `get_settings_json()` in each app, generates HTML controls from the returned data, saves changed values on the device, and lets the app read them with `app_mgr.config()`.
 

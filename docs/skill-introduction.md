@@ -1,10 +1,10 @@
-# mini dock skill introduction
+# Mini Dock Skill Introduction
 
-This document is the skill-specific introduction that can be linked from a mini dock manual, internal guide, or project README.
+This document is the skill-specific introduction that can be linked from a Mini Dock manual, internal guide, or project README.
 
 ## What The Skill Does
 
-`mini-dock` helps an AI coding agent generate, modify, and review mini dock apps without binding the output to a single companion app.
+`mini-dock` helps an AI coding agent generate, modify, and review Mini Dock apps without binding the output to a single companion app.
 
 It focuses on:
 - app folder and entrypoint conventions
@@ -25,7 +25,7 @@ It focuses on:
 Use the skill when asking for:
 
 ```text
-Use $mini-dock to make a mini dock app that displays a QR code.
+Use $mini-dock to make a Mini Dock app that displays a QR code.
 ```
 
 ```text
@@ -42,7 +42,7 @@ Use $mini-dock to add button/encoder navigation to this LVGL screen.
 
 ## What It Does Not Replace
 
-The skill does not replace the mini dock manual. For device setup, SDK API details, and official constraints, use the official references:
+The skill does not replace the Mini Dock manual. For device setup, SDK API details, and official constraints, use the official references:
 
 - Developer getting started: https://dock.myvobot.com/developer/getting_started/
 - Resource path configuration: https://dock.myvobot.com/developer/getting_started/#important-resource-file-path-configuration
@@ -76,7 +76,7 @@ See the official resource path documentation for the device-level rule.
 - `references/app-structure-and-deployment.md`: app layout, lifecycle, upload handoff, path checks
 - `references/ui-and-input.md`: LVGL, fonts, screen, buttons, encoder input
 - `references/hardware-and-peripherals.md`: SDK peripherals and GPIO safety policy
-- `references/emulator.md`: Docker-based mini dock simulator setup and debugging
+- `references/emulator.md`: Docker-based Mini Dock simulator setup and debugging
 - `references/publishing.md`: manifest, packaging, `.vbt`, and App Gallery upload flow
 - `references/system-services.md`: app manager, device, settings, clocktime, and network APIs
 - `references/web-settings.md`: web configuration forms and saved app settings

@@ -1,6 +1,6 @@
-# mini dock skill
+# Mini Dock Skill
 
-A generic AI coding skill for building and reviewing **mini dock** MicroPython apps.
+A generic AI coding skill for building and reviewing **Mini Dock** MicroPython apps.
 
 This repository contains the skill instructions. Device setup, SDK behavior, Thonny usage, app lifecycle, and resource-path rules belong to the official VOBOT documentation and are linked below instead of being duplicated here.
 
@@ -33,7 +33,7 @@ mini_dock/
     `-- prompts.md
 ```
 
-## Official mini dock References
+## Official Mini Dock References
 
 - VOBOT developer getting started: https://dock.myvobot.com/developer/getting_started/
 - Important resource path configuration: https://dock.myvobot.com/developer/getting_started/#important-resource-file-path-configuration
@@ -64,17 +64,17 @@ Restart or reload the app after installing.
 ## Use
 
 ```text
-Use $mini-dock to build a generic mini dock app.
+Use $mini-dock to build a generic Mini Dock app.
 ```
 
 ```text
-Use $mini-dock to create a BLE NUS control app for mini dock.
+Use $mini-dock to create a BLE NUS control app for Mini Dock.
 ```
 
 ```text
-Use $mini-dock to review my mini dock app structure and resource paths.
+Use $mini-dock to review my Mini Dock app structure and resource paths.
 ```
 
 ## Scope
 
-This skill is device-focused and app-neutral. It covers mini dock app structure, LVGL UI, input handling, SDK peripherals, GPIO safety policy, BLE NUS patterns, and deployment guidance. It does not assume compatibility with any single companion app or protocol.
+This skill is device-focused and app-neutral. It covers Mini Dock app structure, LVGL UI, input handling, SDK peripherals, GPIO safety policy, BLE NUS patterns, and deployment guidance. It does not assume compatibility with any single companion app or protocol.
