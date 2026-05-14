@@ -56,7 +56,7 @@ mini_dock/
 ## Install
 
 ```bash
-npx skills add https://github.com/myvobot/mini_dock --skill mini-dock
+npx skills add https://github.com/myvobot/dock-mini-app-skill --skill mini-dock
 ```
 
 Restart or reload the app after installing.
